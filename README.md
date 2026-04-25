@@ -83,5 +83,3 @@ pokedex/
 5. Use o botão **"Voltar ao início"** para retornar à listagem
 
 ---
-
-Feito com ❤️ usando React + PokéAPI
