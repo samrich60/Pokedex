@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# 📱 Pokédex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto desenvolvido em sala de aula utilizando **React** e a **PokéAPI** pública e gratuita.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Funcionalidades
 
-### `npm start`
+- 🔍 Buscar Pokémon pelo **nome**
+- 🔢 Buscar Pokémon pelo **ID**
+- 📋 Listagem com **paginação** dos 151 Pokémons originais
+- 🏷️ Exibição do **ID** de cada Pokémon
+- 🔠 Nome exibido em **letras maiúsculas**
+- 📊 Detalhes completos: tipo, altura, peso, habilidades e status base
+- ❌ Não permite busca por **ID negativo**
+- 🔙 Botão **"Voltar ao início"** na tela de detalhes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Como rodar o projeto
 
-### `npm test`
+### Pré-requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.js](https://nodejs.org) instalado
+- [VS Code](https://code.visualstudio.com) (recomendado)
 
-### `npm run build`
+### Instalação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Clone o repositório
+git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Entre na pasta
+cd NOME_DO_REPOSITORIO
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Instale as dependências
+npm install
 
-### `npm run eject`
+# Rode o projeto
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O projeto abrirá automaticamente em **http://localhost:3000**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Tecnologias utilizadas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [React](https://react.dev)
+- [PokéAPI](https://pokeapi.co)
+- CSS customizado com tema dark
+- Google Fonts (Press Start 2P + Nunito)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 Estrutura do projeto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+pokedex/
+├── public/
+├── src/
+│   ├── App.js       # Componente principal
+│   ├── App.css      # Estilização
+│   └── index.js
+├── package.json
+└── README.md
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎨 Preview
 
-### Analyzing the Bundle Size
+> Pokédex com tema dark, listagem em grid, busca por nome e ID, e tela de detalhes com stats.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📚 Como usar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Ao abrir o app, a lista dos 151 Pokémons é carregada automaticamente
+2. Use o campo de busca por **nome** para encontrar um Pokémon específico
+3. Use o campo de busca por **ID** para buscar pelo número (ex: 25 para Pikachu)
+4. Clique em qualquer card para ver os **detalhes completos**
+5. Use o botão **"Voltar ao início"** para retornar à listagem
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feito com ❤️ usando React + PokéAPI
