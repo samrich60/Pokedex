@@ -1,38 +1,399 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1a1a2e;
+  min-height: 100vh;
+}
+
+.pokedex-root {
+  font-family: 'Nunito', sans-serif;
+  background: #1a1a2e;
+  min-height: 100vh;
+  padding: 24px 16px;
+  color: #fff;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.poke-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.poke-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 22px;
+  color: #ffcb05;
+  text-shadow: 3px 3px 0 #cc9900;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.poke-subtitle {
+  font-size: 13px;
+  color: #a0a0c0;
+  letter-spacing: 1px;
+}
+
+/* ── Busca ── */
+.search-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.id-search-row {
+  display: flex;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+
+.poke-input {
+  flex: 1;
+  background: #16213e;
+  border: 2px solid #0f3460;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  padding: 10px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.poke-input:focus {
+  border-color: #e94560;
+}
+
+.poke-input::placeholder {
+  color: #5a5a7a;
+}
+
+/* remove setas do input number */
+.poke-input[type='number']::-webkit-inner-spin-button,
+.poke-input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* ── Botões ── */
+.btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 10px 18px;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-search {
+  background: #e94560;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.btn-search:hover {
+  opacity: 0.88;
+}
+
+.btn-back {
+  background: #0f3460;
+  color: #a0c4ff;
+  border: 2px solid #1a5276;
+  font-size: 12px;
+  padding: 10px 18px;
+}
+
+.btn-back:hover {
+  background: #16406e;
+}
+
+/* ── Lista de cards ── */
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 14px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.mini-card {
+  background: #16213e;
+  border: 2px solid #0f3460;
+  border-radius: 16px;
+  padding: 14px 10px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.mini-card:hover {
+  border-color: #e94560;
+  transform: translateY(-3px);
+}
+
+.mini-id {
+  font-size: 10px;
+  color: #5a5a7a;
+  margin-bottom: 2px;
+}
+
+.mini-img {
+  width: 72px;
+  height: 72px;
+  image-rendering: pixelated;
+}
+
+.mini-name {
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 4px;
+  word-break: break-word;
+}
+
+/* ── Paginação ── */
+.nav-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.nav-btn {
+  background: #16213e;
+  border: 2px solid #0f3460;
+  border-radius: 10px;
+  color: #a0a0c0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.nav-btn:hover:not(:disabled) {
+  border-color: #ffcb05;
+  color: #ffcb05;
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.nav-page-info {
+  color: #a0a0c0;
+  font-size: 13px;
+  padding: 0 6px;
+}
+
+/* ── Card detalhe ── */
+.poke-card {
+  background: #16213e;
+  border-radius: 20px;
+  border: 2px solid #1a3a6e;
+  padding: 28px 24px;
+  max-width: 420px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.poke-id-badge {
+  display: inline-block;
+  background: rgba(255, 203, 5, 0.15);
+  border: 1.5px solid #ffcb05;
+  border-radius: 20px;
+  color: #ffcb05;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  padding: 4px 14px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.poke-img-wrap {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 16px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.08);
 }
 
-.App-link {
-  color: #61dafb;
+.poke-img {
+  width: 130px;
+  height: 130px;
+  image-rendering: pixelated;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.poke-name {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.poke-types {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.poke-type {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Cores dos tipos ── */
+.type-fire     { background: #cc4400; color: #ffe0cc; }
+.type-water    { background: #0066aa; color: #ccefff; }
+.type-grass    { background: #228822; color: #ccffcc; }
+.type-electric { background: #aa8800; color: #fff0aa; }
+.type-psychic  { background: #aa2255; color: #ffd0e0; }
+.type-ice      { background: #2277aa; color: #ccf0ff; }
+.type-dragon   { background: #4400aa; color: #e0ccff; }
+.type-dark     { background: #333355; color: #ccccdd; }
+.type-fairy    { background: #aa4488; color: #ffd0ee; }
+.type-normal   { background: #5a5a5a; color: #e0e0e0; }
+.type-fighting { background: #882200; color: #ffdacc; }
+.type-flying   { background: #3355aa; color: #ccd8ff; }
+.type-poison   { background: #6622aa; color: #e8ccff; }
+.type-ground   { background: #775500; color: #ffe0aa; }
+.type-rock     { background: #555533; color: #eeeecc; }
+.type-bug      { background: #446600; color: #d4ffaa; }
+.type-ghost    { background: #332266; color: #ccbbff; }
+.type-steel    { background: #445566; color: #ccddee; }
+
+/* ── Stats cards 2x2 ── */
+.poke-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-label {
+  font-size: 10px;
+  color: #a0a0c0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* ── Barras de status ── */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin: 18px 0;
+}
+
+.section-title {
+  font-size: 11px;
+  color: #a0a0c0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.stat-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.stat-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-bar-name {
+  color: #a0a0c0;
+  width: 36px;
+  text-align: left;
+  font-size: 11px;
+}
+
+.stat-bar-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.6s ease;
+}
+
+.stat-bar-val {
+  color: #fff;
+  width: 28px;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ── Mensagens ── */
+.loading-msg {
+  text-align: center;
+  color: #a0a0c0;
+  padding: 40px 0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.error-msg {
+  text-align: center;
+  color: #e94560;
+  font-size: 14px;
+  padding: 30px 0;
+  font-weight: 700;
 }
