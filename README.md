@@ -1,6 +1,6 @@
 # 📱 Pokédex
 
-Projeto desenvolvido em sala de aula utilizando **React** e a **PokéAPI** pública e gratuita.
+Projeto desenvolvido em sala de aula utilizando **React** e a **PokéAPI**.
 
 ---
 
